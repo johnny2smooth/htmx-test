@@ -1,4 +1,5 @@
 ---
+let number = 5;
 ---
 
 <html lang="en">
@@ -13,31 +14,21 @@
   <body>
     <!-- replace with form -->
     <form hx-post="/prompt" hx-target="#result">
-      <div>A helpful book about</div>
-      <input
-        type="text"
-        name="prompt"
-        placeholder="Prompt"
-        value="Psychoanalysis"
-        id="prompt"
-        class="border-2 border-solid border-black"
-      />
-      <button type="submit" class="bg-red-100 p-2">Submit</button>
+      <div class="flex items-end gap-4">
+        <div class="text-6xl">Find me a helpful book about</div>
+        <input
+          type="text"
+          name="prompt"
+          placeholder="Prompt"
+          value="Psychoanalysis"
+          id="prompt"
+          class="border-2 border-solid border-black"
+        />
+        <button type="submit" class="bg-red-100">Submit</button>
+      </div>
     </form>
-    <div>
+    <div class="max-w-sm">
       <div id="result"></div>
-    </div>
-    <div
-      hx-post="/clicked"
-      hx-target="#click-target"
-      hx-trigger="click[ctrlKey]"
-    >
-      Click me [with ctrl]
-    </div>
-    <div id="click-target"></div>
-
-    <div id="color" hx-get="/colors" hx-swap="outerHTML" hx-trigger="click">
-      Color Swap Demo
     </div>
   </body>
 </html>

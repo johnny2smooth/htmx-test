@@ -1,5 +1,5 @@
 import { defineMiddleware } from "astro/middleware";
-const HTMX_FRAGMENT_ROUTES = ["/prompt"];
+const HTMX_FRAGMENT_ROUTES = ["/prompt", "increment"];
 
 export const onRequest = defineMiddleware(async (context, next) => {
   // get the html
