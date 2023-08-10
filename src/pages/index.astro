@@ -1,5 +1,4 @@
 ---
-let test = "test!";
 ---
 
 <html lang="en">
@@ -27,6 +26,18 @@ let test = "test!";
     </form>
     <div>
       <div id="result"></div>
+    </div>
+    <div
+      hx-post="/clicked"
+      hx-target="#click-target"
+      hx-trigger="click[ctrlKey]"
+    >
+      Click me [with ctrl]
+    </div>
+    <div id="click-target"></div>
+
+    <div id="color" hx-get="/colors" hx-swap="outerHTML" hx-trigger="click">
+      Color Swap Demo
     </div>
   </body>
 </html>
